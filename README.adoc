@@ -19,3 +19,6 @@ Please contact:  dunston@champlain.edu
 * Lab Guides
 ** Ubuntu 20.04 LTS Base Lab Guide
 *** https://github.com/ethanallis/EACapstone/blob/main/Ubuntu%2020.04%20LTS/Ubuntu20.04LTS.adoc[Read Online]
+
+* See Project Board for Project Progress Updates
+** https://github.com/ethanallis/EACapstone/projects/3[See Here]
