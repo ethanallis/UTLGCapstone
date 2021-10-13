@@ -16,6 +16,6 @@ Please contact:  dunston@champlain.edu
 
 == The Guides
 
-Lab Guides
-* Ubuntu 20.04 LTS Base Lab Guide
-https://github.com/ethanallis/EACapstone/blob/main/Ubuntu%2020.04%20LTS/Ubuntu20.04LTS.adoc[Read Online]
+* Lab Guides
+** Ubuntu 20.04 LTS Base Lab Guide
+*** https://github.com/ethanallis/EACapstone/blob/main/Ubuntu%2020.04%20LTS/Ubuntu20.04LTS.adoc[Read Online]
