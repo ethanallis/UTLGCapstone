@@ -20,5 +20,9 @@ Please contact:  dunston@champlain.edu
 ** Ubuntu 20.04 LTS Base Lab Guide
 *** https://github.com/ethanallis/EACapstone/blob/main/Ubuntu%2020.04%20LTS/Ubuntu20.04LTS.adoc[Read Online]
 
+** Rocky Linux 8 Base Lab Guide
+*** [Read Online]
+
 * See Project Board for Project Progress Updates
-** https://github.com/ethanallis/EACapstone/projects/3[See Here]
+** https://github.com/ethanallis/EACapstone/projects/3[Design Project 1]
+** [Design Project 2]
