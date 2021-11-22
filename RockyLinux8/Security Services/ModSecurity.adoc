@@ -45,7 +45,8 @@ wget http://nginx.org/download/nginx-1.19.10.tar.gz
 ```
 . Unpack the Nginx tar file with the command `tar xzf nginx-1.19.10.tar.gz`
 . Create a non-privilaged user with the command `useradd -r -M -s /sbin/nologin -d /usr/local/nginx nginx`
-. Navigate to the unpacked Nginx directory and configure with the new nginx user using the following command:
+. Navigate to the unpacked Nginx directory with the command `cd nginx-1.19.10/`
+. Configure Nginx with the new nginx user you just created using the following command:
 +
 ```
 ./configure --user=nginx --group=nginx --with-pcre-jit --with-debug --with-http_ssl_module --with-http_realip_module --add-module=/tmp/modsec/ModSecurity-nginx
