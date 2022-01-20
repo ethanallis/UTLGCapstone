@@ -32,3 +32,4 @@ Please contact:  dunston@champlain.edu
 * See Project Board for Project Progress Updates
 ** https://github.com/ethanallis/EACapstone/projects/3[Design Project 1]
 ** https://github.com/ethanallis/EACapstone/projects/4[Design Project 2]
+** https://github.com/ethanallis/EACapstone/projects/5[Implementation Project Plan]
