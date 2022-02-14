@@ -23,14 +23,14 @@ Please contact:  dunston@champlain.edu
 ** Rocky Linux 8 Base Lab Guide
 *** https://github.com/ethanallis/EACapstone/blob/main/RockyLinux8/RockyLinux8.adoc[Read Online]
 
-** Fedora Base Lab Guide
+** Something... Base Lab Guide
 *** Coming Soon!
 
-** FreeBSD Base Lab Guide
+** OpenBSD Base Lab Guide
 *** Coming Soon!
 
 * See Project Board for Project Progress Updates
 ** https://github.com/ethanallis/EACapstone/projects/3[Design Project 1]
 ** https://github.com/ethanallis/EACapstone/projects/4[Design Project 2]
 ** https://github.com/ethanallis/EACapstone/projects/5[Implementation Project Plan]
-** https://github.com/ethanallis/EACapstone/projects/7[Sprint One Project]
+** https://github.com/ethanallis/EACapstone/projects/7[Sprint One Project] NEWEST
