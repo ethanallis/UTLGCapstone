@@ -3,7 +3,7 @@
 
 == Abstract 
 
-This Test Lab Guide (TLG) will provide the user with step-by-step instructions on how to configure a basic network configuration using Rocky Linux 8 servers and a Rocky Linux 8 client. The resulting test lab environment will provide a stable base for building other test labs. It is recommended that users preserve the start of their test machines once this walk-through has been successfully completed. In a physical environment the hard drive of the machine can be imaged. In a virtual environment, the “snapshot” or equivalent feature can be used to preserve the current state of the operating system. Preserving the working conditions of the basic test lab will allow the user to experiment without fear of having to completely rebuild their environment. The ultimate goal of the TLG is to familiarize the user with the Rocky Linux 8 Operating system and how to deploy common network services based on that operating system, and ultimately enable the user to conduct their own experiments in an Rocky Linux 8 based environment.
+This Test Lab Guide (TLG) will provide the user with step-by-step instructions on how to configure a basic network configuration using Rocky Linux 8 servers and a Rocky Linux 8 client. The resulting test lab environment will provide a stable base for building other test labs. It is recommended that users preserve the start of their test machines once this walk-through has been successfully completed. In a physical environment the hard drive of the machine can be imaged. In a virtual environment, the “snapshot” or equivalent feature can be used to preserve the current state of the operating system. Preserving the working conditions of the basic test lab will allow the user to experiment without fear of having to completely rebuild their environment. The ultimate goal of the TLG is to familiarize the user with the Rocky Linux 8 Operating system and how to deploy common network services based on that operating system, and ultimately enable the user to conduct their own experiments in a Rocky Linux 8 based environment.
 
 == Introduction 
 
@@ -37,11 +37,11 @@ OR ANYONE ELSE INVOLVED IN THE CREATION, PRODUCTION,
 OR DELIVERY OF THE GUIDES BE LIABLE TO ANY PERSON FOR
 ANY DIRECT, INDIRECT, SPECIAL, OR OTHER CONSEQUENTIAL
 DAMAGES FOR ANY USE OF THE MATERIAL ON THIS WEBSITE. This
-includes, without limitation, damages for lost profits, business interruption, loss of data or business information, damage to computer equipment or networks, or other loss arising out of the use of any information in the guides
+includes, without limitation, damages for lost profits, business interruption, loss of data or business information, damage to computer equipment or networks, or other loss arising out of the use of any information in the guides.
 
 == Contents of This Guide 
 
-This document contains instructions for settings up the Rocky Linux 8 configuration test lab by deploying two servers running Rocky Linux, one client running Rocky Linux with a desktop environment, and one firewall built on Rocky Linux. Once completed, the lab will simulate the functioning of a private intranet.  
+This document contains instructions for setting up the Rocky Linux 8 configuration test lab by deploying two servers running Rocky Linux, one client running Rocky Linux with a desktop environment, and one firewall built on Rocky Linux. Once completed, the lab will simulate the functioning of a private intranet.  
 
 *Important*: The instructions provided in this document are for educational purposes. They do not represent best practices nor are they recommendations for a production network. These configurations should not be put into place on a production network. This network should be deployed on a separate network specific to testing (physical or virtual). 
 
@@ -77,7 +77,7 @@ The Rocky Linux 8 base configuration test lab consists of the following:
 *** Hostname: client1.college.com
 *** Will have ability to switch between the intranet and internet subnets 
 
-The Rocky Linux 8 base bonfiguration TLG is comprised of one subnet: 
+The Rocky Linux 8 base configuration TLG is comprised of one subnet: 
 
 ** An intranet, known as the internal subnet (192.168.150.0/24 in this example) 
 
@@ -122,19 +122,19 @@ The following instructions will detail the installation and configuration of the
 === Install the Operating System on Firewall
 
 . Configure your physical machine or VM to the system specifications you desire
-.. At least two cores and two gigabtyes of RAM is reccomended for Rocky Linux 8 machines
-.. Ensure an addtional network adapter (NIC) is added to the Firewall machine
+.. At least two cores and two gigabytes of RAM is reccomended for Rocky Linux 8 machines
+.. Ensure an additional network adapter (NIC) is added to the Firewall machine
 . Start the Firewall machine with the .iso or disk installer inserted
 .. Use the arrow keys to navigate the installation media, press enter to confirm a selection
 .. A mouse can also be used to navigate the GUI installation media
 . Upon boot, select `Install Rocky Linux 8`
 . Select language relevant to you and then select `Continue`
-. On the Installation Summary screen, several paramaters will auto-populate. You may change them here
+. On the Installation Summary screen, several parameters will auto-populate. You may change them here
 . Under the `System` column, select `Installation Destination`
-.. Ensure that the disk Rocky Linux is intened to be installed on has a black checkmark in the lower right corner
+.. Ensure that the disk Rocky Linux is intended to be installed on has a black checkmark in the lower right corner
 .. Select `Done` in the upper left corner to finalize the installation destination
 . Under the `Software` column, select `Software Selection`
-.. Select `Server`. No addtional software is needed at this time
+.. Select `Server`. No additional software is needed at this time
 .. Select `Done` in the upper left corner to finalize the software selection
 . Under the `User Settings` column, select `Root Password`
 .. Choose an appropriate root password for your installation
@@ -145,7 +145,7 @@ The following instructions will detail the installation and configuration of the
 ... And the password will be: `Ch@mpl@1n!21`
 ... Check the box `Make this user administrator`
 .. Select `Done` in the upper left corner to finalize the user creation.
-. For all additonal items, select the default values and continue with `Begin Installation`
+. For all additional items, select the default values and continue with `Begin Installation`
 . Upon completion of the installation, select `Reboot System`
 
 === Configure TCP/IP Properties
@@ -167,10 +167,10 @@ image::nmtuifirewall.jpg[Firewall NMTUI, align="center"]
 .. Navigate to the bottom of the menu and ensure `Automatically connect` is enabled. Use spacebar to select it
 .. To confirm the configuration changes select `OK` in the lower right corner of the window
 . Select `Exit` to leave the network manager GUI
-. To implmnent your changes run the command `sudo systemctl restart NetworkManager`
+. To implement your changes run the command `sudo systemctl restart NetworkManager`
 .. To view your new hostname you may logout with `exit` and log in again
 .. To view your new network adapter configurations use the command `ip addr`
-.. You can use `ip addr` in furture TCP/IP configurations for verification of functionality
+.. You can use `ip addr` in future TCP/IP configurations for verification of functionality
 .. The results should look similar to the image below:
 +
 image::firewallips.jpg[IP ADDR, align="center"]
@@ -197,7 +197,7 @@ sudo firewall-cmd --zone=external --add-masquerade
 sudo firewall-cmd --runtime-to-permanent 
 ```
 .. Verify these changes with the command `sudo firewall-cmd --zone=external --query-masquerade`
-.. Ip forwading should automatically be enabled, but can be verified with the command `cat /proc/sys/net/ipv4/ip_forward`
+.. Ip forwarding should automatically be enabled, but can be verified with the command `cat /proc/sys/net/ipv4/ip_forward`
 
 === Snapshot the Configuration 
 
@@ -216,18 +216,18 @@ The following instructions will detail the installation and configuration of the
 === Install the Operating System on Domain Controller
 
 . Configure your physical machine or VM to the system specifications you desire
-.. At least two cores and two gigabtyes of RAM is reccomended for Rocky Linux 8 machines
+.. At least two cores and two gigabytes of RAM is reccomended for Rocky Linux 8 machines
 . Start the Domain Controller machine with the .iso or disk installer inserted
 .. Use the arrow keys to navigate the installation media, press enter to confirm a selection
 .. A mouse can also be used to navigate the GUI installation media
 . Upon boot, select `Install Rocky Linux 8`
 . Select language relevant to you and then select `Continue`
-. On the Installation Summary screen, several paramaters will auto-populate. You may change them here
+. On the Installation Summary screen, several parameters will auto-populate. You may change them here
 . Under the `System` column, select `Installation Destination`
-.. Ensure that the disk Rocky Linux is intened to be installed on has a black checkmark in the lower right corner
+.. Ensure that the disk Rocky Linux is intended to be installed on has a black checkmark in the lower right corner
 .. Select `Done` in the upper left corner to finalize the installation destination
 . Under the `Software` column, select `Software Selection`
-.. Select `Server`. No addtional software is needed at this time
+.. Select `Server`. No additional software is needed at this time
 .. Select `Done` in the upper left corner to finalize the software selection
 . Under the `User Settings` column, select `Root Password`
 .. Choose an appropriate root password for your installation
@@ -238,7 +238,7 @@ The following instructions will detail the installation and configuration of the
 ... And the password will be: `Ch@mpl@1n!21`
 ... Check the box `Make this user administrator`
 .. Select `Done` in the upper left corner to finalize the user creation.
-. For all additonal items, select the default values and continue with `Begin Installation`
+. For all additional items, select the default values and continue with `Begin Installation`
 . Upon completion of the installation, select `Reboot System`
 
 === Configure TCP/IP Properties
@@ -256,7 +256,7 @@ image::nmtuidomaincontroller.jpg[DC NMTUI, align="center"]
 .. Navigate to the bottom of the menu and ensure `Automatically connect` is enabled. Use spacebar to select it
 .. To confirm the configuration changes select `OK` in the lower right corner of the window
 . Select `Exit` to leave the network manager GUI
-. To implmnent your changes run the command `sudo systemctl restart NetworkManager`
+. To implement your changes run the command `sudo systemctl restart NetworkManager`
 .. To view your new hostname you may logout with `exit` and log in again
 .. To view your new network adapter configurations use the command `ip addr`
 .. To test connectivity to the external network use the command `ping google.com -c 4`
@@ -302,7 +302,7 @@ named-checkzone 150.168.192.in-addr.arpa /var/named/reverse.college.com
 sudo firewall-cmd --add-service=dns --permanent
 sudo firewall-cmd --reload
 ```
-. Test final DNS functionaility with `nslookup` or `dig` like shown in the image below:
+. Test final DNS functionality with `nslookup` or `dig` like shown in the image below:
 .. Note: This must be done after reconfiguring TCP/IP properties below
 +
 image::dns5.jpg[DC DNS5, align="center"]
@@ -329,7 +329,7 @@ sudo firewall-cmd --reload
 . Navigate back to the IPv4 settings for the network adapter and change DNS settings
 .. Replace the DNS field with the address of the Domain Controller, `192.168.150.10`
 .. Select `Exit` to leave the network manager GUI
-. To implmnent your changes run the command `sudo systemctl restart NetworkManager`
+. To implement your changes run the command `sudo systemctl restart NetworkManager`
 
 === Snapshot the Configuration 
 
@@ -346,18 +346,18 @@ The following instructions will detail the installation and configuration of the
 === Install the Operating System
 
 . Configure your physical machine or VM to the system specifications you desire
-.. At least two cores and two gigabtyes of RAM is reccomended for Rocky Linux 8 machines
+.. At least two cores and two gigabytes of RAM is reccomended for Rocky Linux 8 machines
 . Start the Client machine with the .iso or disk installer inserted
 .. Use the arrow keys to navigate the installation media, press enter to confirm a selection
 .. A mouse can also be used to navigate the GUI installation media
 . Upon boot, select `Install Rocky Linux 8`
 . Select language relevant to you and then select `Continue`
-. On the Installation Summary screen, several paramaters will auto-populate. You may change them here
+. On the Installation Summary screen, several parameters will auto-populate. You may change them here
 . Under the `System` column, select `Installation Destination`
-.. Ensure that the disk Rocky Linux is intened to be installed on has a black checkmark in the lower right corner
+.. Ensure that the disk Rocky Linux is intended to be installed on has a black checkmark in the lower right corner
 .. Select `Done` in the upper left corner to finalize the installation destination
 . Under the `Software` column, select `Software Selection`
-.. Select `Workstation`. No addtional software is needed at this time
+.. Select `Workstation`. No additional software is needed at this time
 .. Select `Done` in the upper left corner to finalize the software selection
 . Under the `User Settings` column, select `Root Password`
 .. Choose an appropriate root password for your installation
@@ -368,26 +368,26 @@ The following instructions will detail the installation and configuration of the
 ... And the password will be: `Ch@mpl@1n!21`
 ... Check the box `Make this user administrator`
 .. Select `Done` in the upper left corner to finalize the user creation
-. For all additonal items, select the default values and continue with `Begin Installation`
+. For all additional items, select the default values and continue with `Begin Installation`
 . On the next screen, select `License Information`
 .. Check the box `I accept the license agreement`
 .. Select `Done` in the upper left corner to finalize license agreement
 . Finally, select `Finsh Configuration` to finish the installation
 . On the Welcome screen, select language relevant to you and then select `Next`
 . Next select the keyboard layout relevant to you and then select `Next`
-. For all additonal items, select the default values and continue with `Next`
+. For all additional items, select the default values and continue with `Next`
 . Finalize configurations by selecting `Start Using Rocky Linux` when prompted
 
 === Configure TCP/IP Properties
 
 . At this point the DHCP server, dc1, should automatically populate your device with an IP address
-. Test connectivity and DNS server function by navigating to firefox on the left sidebar and browsing to a website
+. Test connectivity and DNS server function by navigating to Firefox on the left sidebar and browsing to a website
 .. Alternatively you can open a terminal window by searching for it in the app list and entering the command `ping google.com -c 4`
 . Because we already established static A records for it, client1 will get a static IP too
 . To set a static IP on an Rocky Linux 8 workstation machine, first navigate to the top right of the GUI window and select the drop down menu from the power icon
 . Select `Wired Off`, then select `Wired Settings`, then select the gear wheel in the Wired section of the new window that has opened
 . In the Wired window select IPv4
-. Change the IPv4 Method to Mnaual
+. Change the IPv4 Method to Manual
 .. Change the following fields so that it looks similar to the image below:
 +
 image::wiredguiclient.jpg[Client Wired GUI, align="center"]
@@ -412,18 +412,18 @@ The following instructions will detail the installation and configuration of the
 === Install the Operating System
 
 . Configure your physical machine or VM to the system specifications you desire
-.. At least two cores and two gigabtyes of RAM is reccomended for Rocky Linux 8 machines
+.. At least two cores and two gigabytes of RAM is reccomended for Rocky Linux 8 machines
 . Start the App Server machine with the .iso or disk installer inserted
 .. Use the arrow keys to navigate the installation media, press enter to confirm a selection
 .. A mouse can also be used to navigate the GUI installation media
 . Upon boot, select `Install Rocky Linux 8`
 . Select language relevant to you and then select `Continue`
-. On the Installation Summary screen, several paramaters will auto-populate. You may change them here
+. On the Installation Summary screen, several parameters will auto-populate. You may change them here
 . Under the `System` column, select `Installation Destination`
-.. Ensure that the disk Rocky Linux is intened to be installed on has a black checkmark in the lower right corner
+.. Ensure that the disk Rocky Linux is intended to be installed on has a black checkmark in the lower right corner
 .. Select `Done` in the upper left corner to finalize the installation destination
 . Under the `Software` column, select `Software Selection`
-.. Select `Server`. No addtional software is needed at this time
+.. Select `Server`. No additional software is needed at this time
 .. Select `Done` in the upper left corner to finalize the software selection
 . Under the `User Settings` column, select `Root Password`
 .. Choose an appropriate root password for your installation
@@ -434,7 +434,7 @@ The following instructions will detail the installation and configuration of the
 ... And the password will be: `Ch@mpl@1n!21`
 ... Check the box `Make this user administrator`
 .. Select `Done` in the upper left corner to finalize the user creation.
-. For all additonal items, select the default values and continue with `Begin Installation`
+. For all additional items, select the default values and continue with `Begin Installation`
 . Upon completion of the installation, select `Reboot System`
 
 === Configure TCP/IP Properties
@@ -452,7 +452,7 @@ image::nmtuiappserver.jpg[App NMTUI, align="center"]
 .. Navigate to the bottom of the menu and ensure `Automatically connect` is enabled. Use spacebar to select it
 .. To confirm the configuration changes select `OK` in the lower right corner of the window
 . Select `Exit` to leave the network manager GUI
-. To implmnent your changes run the command `sudo systemctl restart NetworkManager`
+. To implement your changes run the command `sudo systemctl restart NetworkManager`
 .. To view your new hostname you may logout with `exit` and log in again
 .. To view your new network adapter configurations use the command `ip addr`
 .. To test connectivity to the external network use the command `ping google.com -c 4`
@@ -468,9 +468,9 @@ sudo firewall-cmd --add-service=http --permanent
 sudo firewall-cmd --add-service=https --permanent
 sudo firewall-cmd --reload
 ```
-. Turn the Apache survice on with the command `sudo systemctl start httpd`
+. Turn the Apache service on with the command `sudo systemctl start httpd`
 . Optionally, you can add an `index.html` or any other html document to the `/var/www/html/` directory to customize your webserver
-. On client1 using a GUI web brower, you can navigate to the host name of app1 to access the sample webpage as seeb in the image below:
+. On client1 using a GUI web brower, you can navigate to the host name of app1 to access the sample webpage as seen in the image below:
 .. `http://app1.college.com/`
 +
 image::http1.jpg[app1 HTTP1, align="center"]
@@ -482,7 +482,7 @@ Preserving a functional state of the machine is important in case changes are ma
 
 == Security Services
 
-* https://github.com/ethanallis/EACapstone/blob/main/RockyLinux8/Security%20Services/ModSecurity.adoc[ModSecurity & Nginx]
+* https://github.com/ethanallis/testbed/blob/main/RockyLinux8/Security%20Services/ModSecurity.adoc[ModSecurity & Nginx]
 
 == Troubleshooting
 
