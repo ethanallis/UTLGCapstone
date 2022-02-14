@@ -37,11 +37,11 @@ OR ANYONE ELSE INVOLVED IN THE CREATION, PRODUCTION,
 OR DELIVERY OF THE GUIDES BE LIABLE TO ANY PERSON FOR
 ANY DIRECT, INDIRECT, SPECIAL, OR OTHER CONSEQUENTIAL
 DAMAGES FOR ANY USE OF THE MATERIAL ON THIS WEBSITE. This
-includes, without limitation, damages for lost profits, business interruption, loss of data or business information, damage to computer equipment or networks, or other loss arising out of the use of any information in the guides
+includes, without limitation, damages for lost profits, business interruption, loss of data or business information, damage to computer equipment or networks, or other loss arising out of the use of any information in the guides.
 
 == Contents of This Guide 
 
-This document contains instructions for settings up the Ubuntu 20.04 LTS base configuration test lab by deploying two servers running Ubuntu Server, one client running Ubuntu Desktop and one firewall built on Ubuntu Server. Once completed, the lab will simulate the functioning of a private intranet.  
+This document contains instructions for setting up the Ubuntu 20.04 LTS base configuration test lab by deploying two servers running Ubuntu Server, one client running Ubuntu Desktop and one firewall built on Ubuntu Server. Once completed, the lab will simulate the functioning of a private intranet.  
 
 *Important*: The instructions provided in this document are for educational purposes. They do not represent best practices nor are they recommendations for a production network. These configurations should not be put into place on a production network. This network should be deployed on a separate network specific to testing (physical or virtual). 
 
@@ -126,8 +126,8 @@ The following instructions will detail the installation and configuration of the
 === Install the Operating System on Firewall
 
 . Configure your physical machine or VM to the system specifications you desire
-.. At least two cores and two gigabtyes of RAM is reccomended for Ubuntu 20.04 LTS machines
-.. Ensure an addtional network adapter (NIC) is added to the Firewall machine
+.. At least two cores and two gigabytes of RAM is reccomended for Ubuntu 20.04 LTS machines
+.. Ensure an additional network adapter (NIC) is added to the Firewall machine
 . Start the Firewall machine with the .iso or disk installer inserted
 .. Use the arrow keys to navigate the installation media, press enter to confirm a selection
 . Select language relevant to you and then select `Done`
@@ -201,7 +201,7 @@ The following instructions will detail the installation and configuration of the
 === Install the Operating System on Domain Controller
 
 . Configure your physical machine or VM to the system specifications you desire
-.. At least two cores and two gigabtyes of RAM is reccomended for Ubuntu 20.04 LTS machines
+.. At least two cores and two gigabytes of RAM is reccomended for Ubuntu 20.04 LTS machines
 . Start the Domain Controller machine with the .iso or disk installer inserted
 .. Use the arrow keys to navigate the installation media, press enter to confirm a selection
 . Select language relevant to you and then select `Done`
@@ -238,7 +238,7 @@ image::domaincontrollernetplan.jpg[Domain Controller Netplan, align="center"]
 .. `sudo apt install -y bind9`
 . Use nano or vim to edit the named.conf.options file
 .. `sudo nano /etc/bind/named.conf.options`
-. Navigate to the section labed `// forwarders {`
+. Navigate to the section labled `// forwarders {`
 .. Change 0.0.0.0; to your machine's ip address between the curly braces in the forwarder section
 .. It should look similar to the following:
 +
@@ -291,7 +291,7 @@ image::resolvmod.jpg[Modified resolv.conf, align="center"]
 +
 image::dhcpdmod2.jpg[Modified dhcpd.conf, align="center"]
 . Navigate down in the file you reach the tag `A slightly different configuration...`
-.. Uncomment everything under that desription tag down to the white space before the next description tag
+.. Uncomment everything under that description tag down to the white space before the next description tag
 . Change the following lines to the dhcpd file so that it looks similar:
 +
 image::dhcpdmod.jpg[Modified dhcpd.conf, align="center"]
@@ -326,7 +326,7 @@ The following instructions will detail the installation and configuration of the
 === Install the Operating System on Client
 
 . Configure your physical machine or VM to the system specifications you desire
-.. At least two cores and two gigabtyes of RAM is reccomended for Ubuntu 20.04 LTS machines
+.. At least two cores and two gigabytes of RAM is reccomended for Ubuntu 20.04 LTS machines
 ... More cores and ram may be needed for a GUI system depending on use
 . Start the Client machine with the .iso or disk installer inserted
 .. Use the mouse and keyboard to navigate the GUI interface on the installation media
@@ -335,7 +335,7 @@ The following instructions will detail the installation and configuration of the
 . Select Normal or Minimal installation depending on your specific goals
 .. To similate an end client we weill use a normal installation
 .. Select `Continue`
-. Select `Erase disk and install Ubuntu` for the Instalaltion type, then select `Install Now`
+. Select `Erase disk and install Ubuntu` for the installation type, then select `Install Now`
 .. Select `Continue` when prompted regarding overwriting the drive 
 . Select time zone relevant to you and then select `Continue`
 . Assign Client a hostname
@@ -348,7 +348,7 @@ The following instructions will detail the installation and configuration of the
 === Configure TCP/IP Properties
 
 . At this point the DHCP server, dc1, should automatically populate your device with an IP address
-. Test connectivity and DNS server function by navigating to firefox on the left sidebar and browsing to a website
+. Test connectivity and DNS server function by navigating to Firefox on the left sidebar and browsing to a website
 .. Alternatively you can open a terminal window by searching for it in the app list and entering the command `ping google.com -c 4`
 . Because we already established static A records for it, client1 will get a static IP too
 . To set a static IP on an Ubuntu 20.04 LTS Desktop machine, first navigate to the top right of the GUI window and select the node icon to the left of the sound icon
@@ -374,7 +374,7 @@ The following instructions will detail the installation and configuration of the
 === Install the Operating System on App Server
 
 . Configure your physical machine or VM to the system specifications you desire
-.. At least two cores and two gigabtyes of RAM is reccomended for Ubuntu 20.04 LTS machines
+.. At least two cores and two gigabytes of RAM is reccomended for Ubuntu 20.04 LTS machines
 . Start the App Server machine with the .iso or disk installer inserted
 .. Use the arrow keys to navigate the installation media, press enter to confirm a selection
 . Select language relevant to you and then select `Done`
@@ -405,79 +405,31 @@ image::appservernetplan.jpg[App Server Netplan, align="center"]
 . Enter the command `sudo netplan apply` to implement your changes
 . Use the command `ping 192.168.100.1 -c 4` to test connectivity
 
-=== Configure Splunk
+=== Configuring Apache
 
-. Navigate to a web browser and browse to https://www.splunk.com/en_us/download/splunk-enterprise.html
-.. This can be done on any web browser inside or outside of the environemt 
-.. You also must create or log into an account
-. Navigate to the Linux section and download the `.deb` version
-.. Select `Download Now`
-.. Copy or make note of the wget command located under `Useful Tools` in the top right
-.. In this case the command is as follows
-```
-wget -O splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb 'https://download.splunk.com/products/splunk/releases/8.2.2.1/linux/splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb'
-```
-. Run the aformentioned wget command on the App Server machine
-.. `sudo wget -O splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb...`
-. Unpack Splunk using the following command:
-.. `sudo dpkg -i splunk-8.2.2.1-ae6821b7c64b-linux-2.6-amd64.deb`
-. Start Splunk and accept the license using the following command:
-.. `sudo /opt/splunk/bin/splunk start --accept-license`
-.. Create a splunk administratior user
-... For this test purpose we will re-use our champuser credentials, something that should never be done in a production environment
-. Stop Splunk using the following command:
-.. `sudo /opt/splunk/bin/splunk stop`
-. Enable splunk to run at boot as the splunk user with the following command:
-.. `sudo /opt/splunk/bin/splunk enable boot-start -user splunk`
-. The ownership of the /opt/splunk files mist be changed to the splunk user
-.. `sudo chown -R splunk:splunk /opt/splunk`
-. Start splunk again with `sudo /opt/splunk/bin/splunk start`
-. Allow the following ports through the local firewall with the following commands:
-.. `sudo ufw allow from any to any port 8000 proto tcp`
-.. `sudo ufw allow from any to any port 9997 proto tcp`
-. The splunk web portal can now be accessed by navigateting to the hostname of the App Server at port 8000
-.. http://app1.college.com:8000 or http://192.168.100.20:8000
-.. This can be done on client1, which has a GUI and web browser
-. Upon navigateing to the splunk web portal you should be greeted with a login page
-.. Enter your credentials and you should be successfully taken to the Splunk landing page like the one shown below
+. Install required packages for Apache functionality with the command `sudo apt install apache2 -y`
+. Enable the Apache service on startup with the command `sudo systemctl enable apache2`
+. Add the `Apache` profile as an exception in the device firewall using the following command:
 +
-image::splunklogin.jpg[Splunk Login, align="center"]
-
-=== Splunk Universal Forwarder Configuration
-
-. The following commands are to be run on the machine in your environment you wish to monitor
-. Navigate to a web browser and browse to https://www.splunk.com/en_us/download/universal-forwarder.html
-.. This can be done on any web browser inside or outside of the environemt 
-.. You also must create or log into an account
-. Navigate to the Linux section and download the `.tgz` version
-.. Select `Download Now`
-.. Copy or make not of the wget command located under `Useful Tools` in the top right
-.. In this case the command is as follows
 ```
-wget -O splunkforwarder-8.2.2.1-ae6821b7c64b-Linux-x86_64.tgz 'https://download.splunk.com/products/universalforwarder/releases/8.2.2.1/linux/splunkforwarder-8.2.2.1-ae6821b7c64b-Linux-x86_64.tgz'
+sudo ufw allow 'Apache'
+sudo ufw status
 ```
-. Run the aformentioned wget command on the server to be monitored
-.. `sudo wget -O plunkforwarder-8.2.2.1-ae6821b7c64b-Linux-x86_64.tgz...`
-. Uncompress the universal forwarder to the /opt/ directory using the followng command:
-.. `sudo tar xvzf splunkforwarder-8.2.2.1-ae6821b7c64b-Linux-x86_64.tgz -C /opt`
-. Start Splunk Universal Forwarder and accept the license using the following command:
-.. `sudo /opt/splunkforwarder/bin/splunk start --accept-license`
-.. Create a splunk administratior user
-... For this test purpose we will re-use our champuser credentials, something that should never be done in a production environment
-. Add a splunk forward server to app1 using the following command:
-.. `sudo /opt/splunkforwarder/bin/splunk add forward-server 192.168.100.20:11000`
-. Allow port 11000 TCP through the local firewall with the following command:
-.. `sudo ufw allow from any to any port 11000 proto tcp`
-. Add a local monitor for the files you want to see on splunk hosted by app1 using the following command:
-.. `sudo /opt/splunkforwarder/bin/splunk add monitor /var/log/...`
-. Restart Splunk using `sudo /opt/splunkforwarder/bin/splunk restart`
-. On the splunk web porta navigate to the Settings > Forwarding and receiving tab, and configure recieving
-.. Add port 9997 as a receiving port 
-. Splunk should start revicing logs from the directories being moitored on the remote machine
+. Turn the Apache service on with the command `sudo systemctl start apache2`
+. Optionally, you can add an `index.html` or any other html document to the `/var/www/html/` directory to customize your webserver
+. On client1 using a GUI web brower, you can navigate to the host name of app1 to access the sample webpage as seen in the image below:
+.. `http://app1.college.com/`
++
+image::http1.jpg[app1 HTTP1, align="center"]
+. In the Security Services section of this guide, Mod Security and Nginx are covered and how to implement them on the Application Server
 
 === Snapshot the Configuration 
 
 Preserving a functional state of the machine is important in case changes are made accidently. This can be done using VMWare’s snapshot functionality or other software packages for hardware labs.
+
+== Security Services
+
+* Placeholder
 
 == Troubleshooting
 
