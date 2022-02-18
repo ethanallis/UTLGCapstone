@@ -23,7 +23,7 @@ Please contact:  dunston@champlain.edu
 ** Rocky Linux 8 Base Lab Guide
 *** https://github.com/ethanallis/EACapstone/blob/main/RockyLinux8/RockyLinux8.adoc[Read Online]
 
-** Something... Base Lab Guide
+** Fedora Base Lab Guide
 *** Coming Soon!
 
 ** OpenBSD Base Lab Guide
