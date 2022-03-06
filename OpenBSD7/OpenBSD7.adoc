@@ -109,7 +109,7 @@ When running many commands throughout these TLGs you may be required to use ‘s
 === Install the Operating System on Firewall
 
 . Configure your physical machine or VM to the system specifications you desire
-.. At least two cores and two gigabytes of RAM is reccomended for Rocky Linux 8 machines
+.. At least two cores and two gigabytes of RAM is reccomended for OpenBSD 7 machines
 .. Ensure an additional network adapter (NIC) is added to the Firewall machine
 . Start the Firewall machine with the .iso or disk installer inserted
 .. Use the arrow keys to navigate the installation media, press enter to confirm a selection
