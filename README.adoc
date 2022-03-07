@@ -27,7 +27,7 @@ Please contact:  dunston@champlain.edu
 *** https://github.com/ethanallis/UTLGCapstone/blob/main/Fedora35/Fedora35.adoc[Read Online]
 
 ** OpenBSD Base Lab Guide
-*** Coming Soon![Read Online]
+*** https://github.com/ethanallis/UTLGCapstone/blob/main/OpenBSD7/OpenBSD7.adoc[Read Online]
 
 * See Project Board for Project Progress Updates
 ** https://github.com/ethanallis/EACapstone/projects/3[Design Project 1]
