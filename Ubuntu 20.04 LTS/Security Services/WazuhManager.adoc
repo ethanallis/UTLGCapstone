@@ -67,4 +67,51 @@ sudo curl -so /usr/share/elasticsearch/plugins/opendistro_security/securityconfi
 sudo curl -so /usr/share/elasticsearch/plugins/opendistro_security/securityconfig/internal_users.yml https://packages.wazuh.com/resources/4.2/open-distro/elasticsearch/roles/internal_users.yml
 ```
 
+== Install Certificates
+
+. Remove demo certs
++
+```
+sudo rm -f /etc/elasticsearch/{esnode-key.pem,esnode.pem,kirk-key.pem,kirk.pem,root-ca.pem}
+```
+
+. Download the `wazuh-cert-tool.sh`
++
+```
+sudo su -
+curl -so ~/wazuh-cert-tool.sh https://packages.wazuh.com/resources/4.2/open-distro/tools/certificate-utility/wazuh-cert-tool.sh
+curl -so ~/instances.yml https://packages.wazuh.com/resources/4.2/open-distro/tools/certificate-utility/instances_aio.yml
+```
+
+. Run the `wazuh-cert-tool.sh`
++
+```
+bash ~/wazuh-cert-tool.sh
+```
+
+. Move the Elasticsearch certificates to the correct location
++
+```
+mkdir /etc/elasticsearch/certs/
+mv ~/certs/elasticsearch* /etc/elasticsearch/certs/
+mv ~/certs/admin* /etc/elasticsearch/certs/
+cp ~/certs/root-ca* /etc/elasticsearch/certs/
+```
+
+. Fix the Log4j2 Vulnerability
+```
+mkdir -p /etc/elasticsearch/jvm.options.d
+echo '-Dlog4j2.formatMsgNoLookups=true' > /etc/elasticsearch/jvm.options.d/disabledlog4j.options
+chmod 2750 /etc/elasticsearch/jvm.options.d/disabledlog4j.options
+chown root:elasticsearch /etc/elasticsearch/jvm.options.d/disabledlog4j.options
+```
+
+. Enable and Start Elasticsearch
++
+```
+systemctl daemon-reload
+systemctl enable elasticsearch
+systemctl start elasticsearch
+systemctl status elasticsearch
+```
 
