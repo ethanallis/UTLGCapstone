@@ -55,6 +55,9 @@ sudo curl -so /etc/elasticsearch/elasticsearch.yml https://packages.wazuh.com/re
 .. This adds the following users to Kibana:
 ... Wazuh_user - Used for read-only access to the Wazuh Kibana plugin.
 ... Wazuh_admin - For users who need admin privileges.
+.. Two additional roles are also added to gives users appropriate permissions:
+... Wazuh_ui_user - provides wazuh_user permissions to read the Wazuh's indicies.
+... Wazuh_ui_admin - allows wazuh_admin to perform read/write, management and indexing on wazuh indices.
 +
 ```
 sudo curl -so /usr/share/elasticsearch/plugins/opendistro_security/securityconfig/roles.yml https://packages.wazuh.com/resources/4.2/open-distro/elasticsearch/roles/roles.yml
