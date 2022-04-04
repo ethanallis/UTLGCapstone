@@ -388,6 +388,40 @@ image::ssldeletecursor.jpg[picture of what is going to be deleted for ssl, align
 .. `pkg_add curl`
 .. `curl 192.168.50.20`
 
+== Security Service
+
+. To install the Wazuh Agent on OpenBSD do the following steps below.
++
+```
+curl -LO https://github.com/wazuh/wazuh/archive/refs/tags/v4.2.5.tar.gz
+tar xzf v4.2.5.tar.gz
+cd wazuh-4.2.5/src/
+sed -i 's/OPENSSL_FLAGS = enable-weak-ssl-ciphers no-shared/OPENSSL_FLAGS = enable-weak-ssl-ciphers no-shared no-asm/g' Makefile
+gmake deps TARGET=agent
+gmake TARGET=agent
+```
+
+. After doing the commands above connect the Wazuh Agent to the Wazuh Manager. Edit the file `/var/ossec/etc/ossec.conf` and add the Wazuh Manager's ip address.
++
+```
+<ossec_config>
+  <client>
+    <server>
+      <address>WAZUH_MANAGER_IP</address>
+      <protocol>tcp</protocol>
+    </server>
+  </client>
+</ossec_config>
+```
+
+. After editing the config file do the following command:
++
+```
+/var/ossec/bin/agent-auth -m MANAGER_IP
+```
+
+After completing that command restart the OpenBSD system and your Wazuh Agent will be connected to the Manager.
+
 === Snapshot the Configuration 
 
 Preserving a functional state of the machine is important in case changes are made accidently. This can be done using VMWare’s snapshot functionality or other software packages for hardware labs. 
