@@ -61,7 +61,7 @@ sudo curl -so /usr/share/elasticsearch/plugins/opendistro_security/securityconfi
 sudo curl -so /usr/share/elasticsearch/plugins/opendistro_security/securityconfig/internal_users.yml https://packages.wazuh.com/resources/4.2/open-distro/elasticsearch/roles/internal_users.yml
 ```
 
-This adds the following users to Kibana:
+. This adds the following users to Kibana:
 .. Wazuh_user - Used for read-only access to the Wazuh Kibana plugin.
 .. Wazuh_admin - For users who need admin privileges.
 
