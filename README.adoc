@@ -24,10 +24,10 @@ Please contact:  dunston@champlain.edu
 *** https://github.com/ethanallis/EACapstone/blob/main/RockyLinux8/RockyLinux8.adoc[Read Online]
 
 ** Fedora Base Lab Guide
-*** Coming Soon!
+*** https://github.com/ethanallis/UTLGCapstone/blob/main/Fedora35/Fedora35.adoc[Read Online]
 
 ** OpenBSD Base Lab Guide
-*** Coming Soon!
+*** https://github.com/ethanallis/UTLGCapstone/blob/main/OpenBSD7/OpenBSD7.adoc[Read Online]
 
 * See Project Board for Project Progress Updates
 ** https://github.com/ethanallis/EACapstone/projects/3[Design Project 1]
