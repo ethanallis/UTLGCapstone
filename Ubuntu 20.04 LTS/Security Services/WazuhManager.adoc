@@ -8,28 +8,32 @@ This document is designed to be used in tandem with the Unix Test Lab Guide (TLG
 == Installation of Wazuh Manager
 
 It is recommended that you update your system. You can do this using the command `sudo apt update && sudo apt upgrade -y`
-+
+
 . First, add the GPG key
++
 ```
 curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | sudo apt-key add -
 ```
-+
+
 . Second, add the Wazuh repository
++
 ```
 echo "deb https://packages.wazuh.com/4.x/apt/ stable main" | sudo tee /etc/apt/sources.list.d/wazuh.list
 ```
-+
+
 . Install the Wazuh Manager
++
 ```
 sudo apt install wazuh-manager
 ```
-+
+
 . Start and enable the service
++
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable --now wazuh-manager
 ```
-+
+
 . Check status for the Wazuh Manager and confirm that it's running
 ```
 systemctl status wazuh-manager
@@ -44,8 +48,9 @@ sudo apt install elasticsearch-oss opendistroforelasticsearch
 ```
 sudo curl -so /etc/elasticsearch/elasticsearch.yml https://packages.wazuh.com/resources/4.2/open-distro/elasticsearch/7.x/elasticsearch_all_in_one.yml
 ```
-+
+
 . Configure the Kibana roles and users the the templates below:
++
 ```
 sudo curl -so /usr/share/elasticsearch/plugins/opendistro_security/securityconfig/roles.yml https://packages.wazuh.com/resources/4.2/open-distro/elasticsearch/roles/roles.yml
 
@@ -53,6 +58,7 @@ sudo curl -so /usr/share/elasticsearch/plugins/opendistro_security/securityconfi
 
 sudo curl -so /usr/share/elasticsearch/plugins/opendistro_security/securityconfig/internal_users.yml https://packages.wazuh.com/resources/4.2/open-distro/elasticsearch/roles/internal_users.yml
 ```
+
 This adds the following users to Kibana:
 .. Wazuh_user - Used for read-only access to the Wazuh Kibana plugin.
 .. Wazuh_admin - For users who need admin privileges.
