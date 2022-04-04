@@ -426,6 +426,18 @@ gmake TARGET=agent
 
 After completing that command restart the OpenBSD system and your Wazuh Agent will be connected to the Manager.
 
+. Next open up and edit the `/var/ossec/etc/ossec.conf` file again and add the following lines below the last <wodle>:
++
+```
+<wodle name="syscollector">
+  <disabled>no</disabled>
+  <interval>1h</interval>
+  <os>yes</os>
+  <packages>yes</packages>
+</wodle>
+```
+This will enable running vulnerability scans on the agent.
+
 == Troubleshooting
 
 To test network connectivity run `ping 8.8.8.8`. If it fails, run `ping 192.168.50.1` to see if you can ping the router. If you can’t ping the router make sure your computer is on the correct network. If you can but you can’t reach 8.8.8.8, make sure the computer has an ip address and that NAT is working properly. 
