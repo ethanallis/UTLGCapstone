@@ -232,7 +232,9 @@ user: admin
 password: admin
 ```
 
-. Enable Security Vulnerability Scans in `/var/ossec/etc/ossec.conf`
+== Enable Security Vulnerability Scans 
+
+. Edit `/var/ossec/etc/ossec.conf`
 +
 ```
 <vulnerability-detector>
