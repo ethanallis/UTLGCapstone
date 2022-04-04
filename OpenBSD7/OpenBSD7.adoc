@@ -388,6 +388,10 @@ image::ssldeletecursor.jpg[picture of what is going to be deleted for ssl, align
 .. `pkg_add curl`
 .. `curl 192.168.50.20`
 
+=== Snapshot the Configuration 
+
+Preserving a functional state of the machine is important in case changes are made accidently. This can be done using VMWare’s snapshot functionality or other software packages for hardware labs. 
+
 == Security Service
 
 . To install the Wazuh Agent on OpenBSD do the following steps below.
@@ -421,10 +425,6 @@ gmake TARGET=agent
 ```
 
 After completing that command restart the OpenBSD system and your Wazuh Agent will be connected to the Manager.
-
-=== Snapshot the Configuration 
-
-Preserving a functional state of the machine is important in case changes are made accidently. This can be done using VMWare’s snapshot functionality or other software packages for hardware labs. 
 
 == Troubleshooting
 
