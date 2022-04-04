@@ -447,7 +447,7 @@ Preserving a functional state of the machine is important in case changes are ma
 
 == Security Services
 
-* [Wazuh - Coming Soon]
+* https://github.com/ethanallis/UTLGCapstone/blob/main/Fedora35/Security%20Services/Wazuh.adoc[Wazuh]
 
 == Troubleshooting
 
