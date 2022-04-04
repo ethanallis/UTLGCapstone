@@ -23,7 +23,7 @@ firewall-cmd --reload
 
 . To begin, elevate to root with `sudo -i`, and then establish the Wazuh repository with the following command:
 +
-image::wazuhrepoconf.jpg[Wazuh Repo Conf, align="center"]
+image::wazuhrepoconfig.jpg[Wazuh Repo Conf, align="center"]
 
 . Then import the GPG key using the command `rpm --import https://packages.wazuh.com/key/GPG-KEY-WAZUH`
 . Using dnf, install the Wazuh Manager using the command `sudo dnf -y install wazuh-manager` 
@@ -49,7 +49,7 @@ image::elasticsearchrepoconfig.jpg[Elastic Search Repo Conf, align="center"]
 . Edit or create the `/etc/filebeat/filebeat.yml` file with Nano of VIM so that it looks similar to the configuration file below:
 .. `sudo nano /etc/filebeat/filebeat.yml`
 +
-image::filebeatconfig.jpg[Filebeat Conf, align="center"]
+image::filebeatconf.jpg[Filebeat Conf, align="center"]
 
 . Download the Wazuh alert template for Elasticsearch and change permissions with the following commands:
 +
