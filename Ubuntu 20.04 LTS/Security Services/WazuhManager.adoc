@@ -44,7 +44,9 @@ systemctl status wazuh-manager
 ```
 sudo apt install elasticsearch-oss opendistroforelasticsearch
 ```
+
 . Download the configuration file for `/etc/elasticsearch/elasticsearch.yml`
++
 ```
 sudo curl -so /etc/elasticsearch/elasticsearch.yml https://packages.wazuh.com/resources/4.2/open-distro/elasticsearch/7.x/elasticsearch_all_in_one.yml
 ```
