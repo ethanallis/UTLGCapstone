@@ -52,6 +52,9 @@ sudo curl -so /etc/elasticsearch/elasticsearch.yml https://packages.wazuh.com/re
 ```
 
 . Configure the Kibana roles and users the the templates below:
+.. This adds the following users to Kibana:
+... Wazuh_user - Used for read-only access to the Wazuh Kibana plugin.
+... Wazuh_admin - For users who need admin privileges.
 +
 ```
 sudo curl -so /usr/share/elasticsearch/plugins/opendistro_security/securityconfig/roles.yml https://packages.wazuh.com/resources/4.2/open-distro/elasticsearch/roles/roles.yml
@@ -61,7 +64,4 @@ sudo curl -so /usr/share/elasticsearch/plugins/opendistro_security/securityconfi
 sudo curl -so /usr/share/elasticsearch/plugins/opendistro_security/securityconfig/internal_users.yml https://packages.wazuh.com/resources/4.2/open-distro/elasticsearch/roles/internal_users.yml
 ```
 
-. This adds the following users to Kibana:
-.. Wazuh_user - Used for read-only access to the Wazuh Kibana plugin.
-.. Wazuh_admin - For users who need admin privileges.
 
