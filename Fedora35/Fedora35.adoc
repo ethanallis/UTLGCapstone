@@ -194,7 +194,7 @@ iptables -I FORWARD 2 -i eth1 -o eth0 -j ACCEPT
 
 Preserving a functional state of the machine is important in case changes are made accidently. This can be done using VMWare’s snapshot functionality or other software packages for hardware labs.
 
-=== **Step Two** - Configure Domain Controller 
+== **Step Two** - Configure Domain Controller 
 
 The following instructions will detail the installation and configuration of the Domain Controller system. It will consist of 6 notable sections as follows: 
 
@@ -320,7 +320,7 @@ sudo firewall-cmd --reload
 
 Preserving a functional state of the machine is important in case changes are made accidently. This can be done using VMWare’s snapshot functionality or other software packages for hardware labs.
 
-=== **Step Three** - Configure Client 
+== **Step Three** - Configure Client 
 
 The following instructions will detail the installation and configuration of the Client system. It will consist of 3 notable sections as follows: 
 
@@ -370,7 +370,7 @@ image::nmcliclient.jpg[Client Wired GUI, align="center"]
 
 Preserving a functional state of the machine is important in case changes are made accidently. This can be done using VMWare’s snapshot functionality or other software packages for hardware labs.
 
-=== **Step Four** - Configure App Server
+== **Step Four** - Configure App Server
 
 The following instructions will detail the installation and configuration of the App Server system. It will consist of 4 notable sections as follows: 
 
