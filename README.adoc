@@ -16,7 +16,7 @@ Please contact:  dunston@champlain.edu
 
 == The Guides
 
-** [Test Lab Guide Template]
+* [Test Lab Guide Template]
 
 * Lab Guides
 ** Ubuntu 20.04 LTS Base Lab Guide
