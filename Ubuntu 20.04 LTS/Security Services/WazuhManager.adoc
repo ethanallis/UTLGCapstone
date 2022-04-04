@@ -253,5 +253,5 @@ password: admin
   </provider>
 </vulnerability-detector>
 ```
-This should already be in the config file all you need to do is change `<enabled>no</enabled>` to `<enabled>yes</enabled>`
+This should already be in the config file all you need to do is change `<enabled>no</enabled>` to `<enabled>yes</enabled>`.  
 You will also need to reflect this by adding it on to each agent you wanted to run a vulnerability scan on. 
