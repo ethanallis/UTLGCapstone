@@ -448,6 +448,32 @@ This will enable running vulnerability scans on the agent.
 </active-response>
 ```
 
+. Using the same config file you can change the following lines to change the scanning options for File Integrity.
++
+Here you can change the directories which can be scanned/monitored.
+```
+<syscheck>
+  <directories check_all="yes">/etc,/usr/bin,/usr/sbin</directories>
+  <directories check_all="yes">/root/users.txt,/bsd,/root/db.html</directories>
+</syscheck>
+```
+Here you can change the frequency of the scans in the selected directories. The 36000 is counted in seconds which equals to 10 hours.
+```
+<syscheck>
+  <frequency>36000</frequency>
+  <directories>/etc,/usr/bin,/usr/sbin</directories>
+  <directories>/bin,/sbin</directories>
+</syscheck>
+```
+You can all change it to a certain time and day which the scan should start at.
+```
+<syscheck>
+  <scan_time>10pm</scan_time>
+  <scan_day>saturday</scan_day>
+  <directories>/etc,/usr/bin,/usr/sbin</directories>
+  <directories>/bin,/sbin</directories>
+</syscheck>
+```
 
 == Troubleshooting
 
