@@ -39,7 +39,8 @@ sudo systemctl enable --now wazuh-manager
 systemctl status wazuh-manager
 ```
 
-== Installation of ELK Stack
+== Installation of Elasticsearch
+Elasticsearch is a distributed, RESTful search and analytics engine capable of addressing a growing number of use cases. As the heart of the Elastic Stack, it centrally stores data for fast search, fine‑tuned relevancy, and powerful analytics that scale with ease. Elasticsearch is commonly used for log analytics, full-text search, security intelligence, business analytics, and operational intelligence use cases.
 
 ```
 sudo apt install elasticsearch-oss opendistroforelasticsearch
@@ -129,6 +130,7 @@ curl -XGET https://localhost:9200 -u admin:admin -k
 ```
 
 == Install Filebeat
+Filebeat is a lightweight shipper for forwarding and centralizing log data. Installed as an agent on your servers, Filebeat monitors the log files or locations that you specify, collects log events, and forwards them to Elasticsearch for indexing.
 
 ```
 sudo apt install filebeat
@@ -175,6 +177,7 @@ filebeat test output
 ```
 
 == Install Kibana
+Kibana is an free and open frontend application that sits on top of the Elastic Stack, providing search and data visualization capabilities for data indexed in Elasticsearch. Commonly known as the charting tool for the Elastic Stack, Kibana also acts as the user interface for monitoring, managing, and securing an Elastic Stack cluster.
 
 ```
 apt install opendistroforelasticsearch-kibana
@@ -255,3 +258,20 @@ password: admin
 ```
 This should already be in the config file all you need to do is change `<enabled>no</enabled>` to `<enabled>yes</enabled>`.  
 You will also need to reflect this by adding it on to each agent you wanted to run a vulnerability scan on. 
+
+== Enable Active Response Module
+
+. Edit Edit `/var/ossec/etc/ossec.conf`
++
+```
+<active-response>
+  <disabled>no</disabled>
+  <command>host-deny</command>
+  <location>defined-agent</location>
+  <agent_id>032</agent_id>
+  <level>10</level>
+  <rules_group>sshd,|pci_dss_11.4,</rules_group>
+  <timeout>1</timeout>
+</active-response>
+```
+The `<active-response>` and `</active-response>` should already be in the config file and all you need to do is add the lines in between.

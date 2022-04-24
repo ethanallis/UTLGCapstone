@@ -393,6 +393,7 @@ image::ssldeletecursor.jpg[picture of what is going to be deleted for ssl, align
 Preserving a functional state of the machine is important in case changes are made accidently. This can be done using VMWare’s snapshot functionality or other software packages for hardware labs. 
 
 == Security Service
+The Wazuh agent is multi-platform and runs on the hosts that the user wants to monitor. It communicates with the Wazuh manager, sending data in near real time through an encrypted and authenticated channel. In this case we're installing the Wazuh Agent on OpenBSD to send logs to the Wazuh Manager which is installed on Ubuntu.
 
 . To install the Wazuh Agent on OpenBSD do the following steps below.
 +
@@ -437,6 +438,16 @@ After completing that command restart the OpenBSD system and your Wazuh Agent wi
 </wodle>
 ```
 This will enable running vulnerability scans on the agent.
+
+. In the same file `/var/ossec/etc/ossec.conf` add the following lines to enable Active Response.
++
+```
+<active-response>
+  <disabled>no</disabled>
+  <repeated_offenders>1,5,10</repeated_offenders>
+</active-response>
+```
+
 
 == Troubleshooting
 
