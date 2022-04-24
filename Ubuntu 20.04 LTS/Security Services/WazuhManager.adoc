@@ -261,7 +261,7 @@ You will also need to reflect this by adding it on to each agent you wanted to r
 
 == Enable Active Response Module
 
-. Edit Edit `/var/ossec/etc/ossec.conf`
+. Edit `/var/ossec/etc/ossec.conf`
 +
 ```
 <active-response>
