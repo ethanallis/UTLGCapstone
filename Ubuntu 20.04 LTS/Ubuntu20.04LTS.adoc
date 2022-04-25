@@ -242,7 +242,7 @@ image::domaincontrollernetplan.jpg[Domain Controller Netplan, align="center"]
 .. Change 0.0.0.0; to your machine's ip address between the curly braces in the forwarder section
 .. It should look similar to the following:
 +
-image::namedconfoptionsmod.jpg[Modified named.conf.options, align="center"]
+image::namedconfoptionsmod1.jpg[Modified named.conf.options, align="center"]
 .. Save and exit the modified named.conf.options file
 . Use nano or vim to edit the named.local file
 .. `sudo nano /etc/bind/named.conf.local`
