@@ -238,9 +238,7 @@ image::domaincontrollernetplan.jpg[Domain Controller Netplan, align="center"]
 .. `sudo apt install -y bind9`
 . Use nano or vim to edit the named.conf.options file
 .. `sudo nano /etc/bind/named.conf.options`
-. Navigate to the section labled `// forwarders {`
-.. Change 0.0.0.0; to your machine's ip address between the curly braces in the forwarder section
-.. It should look similar to the following:
+. Change and add the following lines to the named.conf.options file so that it looks similar:
 +
 image::namedconfoptionsmod1.jpg[Modified named.conf.options, align="center"]
 .. Save and exit the modified named.conf.options file
