@@ -184,7 +184,7 @@ image::wazuhactiveresponse2.jpg[Wazuh Active Response Agent, align="center"]
 +
 image::wazuhfileint.jpg[Wazuh File Integrity Agent, align="center"]
 
-. To adjust the time scans, you can change the `<frequency>36000</frequency>` tag, or to schedule a scan you can add the `<scan_time>` and `<scan_day>` tags
+. To adjust the time of scans, you can change the `<frequency>36000</frequency>` tag, or to schedule a scan you can add the `<scan_time>` and `<scan_day>` tags
 
 . Alternatively, if you wish to enable realtime file integrity detection instead of the default configuration, you can with the following commands:
 +
