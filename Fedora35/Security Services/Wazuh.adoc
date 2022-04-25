@@ -146,7 +146,25 @@ image::wazuhconnectedagents.jpg[Wazuh Connected Agents, align="center"]
 
 ==  Vulnerability Detection
 
-Since we added Wazuh Alert template in step 4 of in the Filebeat section, vulnerability detection should be up an running. Navigate to Wazuh>Modules>Security Events to see live detection and related security events!
+. Vulnerability detection features can be added to Wazuh by first editing the `/var/ossec/etc/ossec.conf` file and changing the `enabled` state from `no` to `yes` similar to the image below:
+.. The ossec.conf file can be edited using the command `sudo nano /var/ossec/etc/ossec.conf`
++
+image::wazuhvulndetec.jpg[Wazuh Vuln Detec Master, align="center"]
+
+. Then, on each agent you wish to enable vulnerability detection on, navigate to the agent configuration file `/var/ossec/etc/ossec.conf` add the following lines to the configuraton similar to the image below:
+..The agent file can be edited using the command `sudo nano /var/ossec/etc/ossec.conf`
++
+image::wazuhvulndetec2.jpg[Wazuh Vuln Detec Agent, align="center"]
+
+== File Integrity
+
+. Alternatively, if you wish to enable realtime file integrity detection instead of the default configuration, you can with the following commands:
++
+```
+<syscheck>
+  <directories check_all="yes" realtime="yes">c:/tmp</directories>
+</syscheck>
+```
 
 === Snapshot the Configuration 
 
