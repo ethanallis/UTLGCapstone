@@ -156,11 +156,35 @@ Configuration complete! Preserving a functional state of the machine is importan
 image::wazuhvulndetec.jpg[Wazuh Vuln Detec Master, align="center"]
 
 . Then, on each agent you wish to enable vulnerability detection on, navigate to the agent configuration file `/var/ossec/etc/ossec.conf` add the following lines to the configuraton similar to the image below:
-..The agent file can be edited using the command `sudo nano /var/ossec/etc/ossec.conf`
+.. The agent file can be edited using the command `sudo nano /var/ossec/etc/ossec.conf`
 +
 image::wazuhvulndetec2.jpg[Wazuh Vuln Detec Agent, align="center"]
 
+. Restart the Wazuh-Manager on the application server to apply changes with the command `systemctl restart wazuh-manager`
+
+== Demonstrating Active Response
+
+. To demonstrate active response, first edit `/var/ossec/etc/ossec.conf` file and add or verify the following command lines under the `<!-- Active response -->` section so it looks similar to the image below:
++
+image::wazuhactiveresponse.jpg[Wazuh Active Response Master, align="center"]
+
+. To implement this active response command, on every agent you wish to enable the rule on, navigate to the agent configuration file `/var/ossec/etc/ossec.conf` add the following lines to the configuraton similar to the image below:
++
+image::wazuhactiveresponse2.jpg[Wazuh Active Response Agent, align="center"]
+
+. This is an example of an SSH attack blocking rule not implemented by default on an agent
+.. After multiple incorrect login attempts with an invalid SSH user, Wazuh will time out the machine attempting to do so for a set period of time. You can test this by pinging the agent before and after the active response is implemented
+
+. Restart the Wazuh-Manager on the application server to apply changes with the command `systemctl restart wazuh-manager`
+
 == File Integrity
+
+. File integrity features should be enabled by default, but you have to show Wazuh where to look on each agent to ensure the feature works effectively
+. To enable file integrity, on every agent you wish to enable the rule on, navigate to the agent configuration file `/var/ossec/etc/ossec.conf` add the following lines to the configuraton similar to the image below:
++
+image::wazuhfileint.jpg[Wazuh File Integrity Agent, align="center"]
+
+. To adjust the time scans, you can change the `<frequency>36000</frequency>` tag, or to schedule a scan you can add the `<scan_time>` and `<scan_day>` tags
 
 . Alternatively, if you wish to enable realtime file integrity detection instead of the default configuration, you can with the following commands:
 +
@@ -177,3 +201,4 @@ image::wazuhvulndetec2.jpg[Wazuh Vuln Detec Agent, align="center"]
 
 == Contributors
 * Ethan Allis
+* Liam Barry
