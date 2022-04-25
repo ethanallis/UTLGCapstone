@@ -5,6 +5,8 @@
 
 This document is designed to be used in tandem with the Unix Test Lab Guide (TLG) for Fedora 35. It contains instructions on how to install, configure, and test the Wazuh Server and accompanying Agents. This guide will provide the user a step-by-step guide, upon completion of which will allow them to build their skills for use in future labs or activities. All configuration steps should be done on the Application Server system unless otherwise noted.
 
+
+
 == Open Necessary Ports
 
 . Before proceeding to the main part of the installation process, it is necessary to open the ports the following software will use using the following commands
@@ -33,6 +35,7 @@ image::wazuhrepoconfig.jpg[Wazuh Repo Conf, align="center"]
 
 == Dependancy Installation
 === Elasticsearch
+Elasticsearch is a distributed, RESTful search and analytics engine capable of addressing a growing number of use cases. As the heart of the Elastic Stack, it centrally stores data for fast search, fine‑tuned relevancy, and powerful analytics that scale with ease. Elasticsearch is commonly used for log analytics, full-text search, security intelligence, business analytics, and operational intelligence use cases.
 
 . Elevate to root with `sudo -i`, and then establish the Elasticsearch repository with the following command:
 +
@@ -43,6 +46,7 @@ image::elasticsearchrepoconfig.jpg[Elastic Search Repo Conf, align="center"]
 . Enable Elasticsearch with `sudo systemctl enable --now elasticsearch`
 
 === Filebeat
+Filebeat is a lightweight shipper for forwarding and centralizing log data. Installed as an agent on your servers, Filebeat monitors the log files or locations that you specify, collects log events, and forwards them to Elasticsearch for indexing.
 
 . Install Filebeat with the following command `sudo dnf install filebeat-7.11.2 -y`
 . It is recommended that you create a backup of the Filebeat configuration with the command `sudo mv /etc/filebeat/filebeat.yml{,.original}`
@@ -72,6 +76,7 @@ curl -s https://packages.wazuh.com/4.x/filebeat/wazuh-filebeat-0.1.tar.gz | tar 
 . Enable Filebeat with `sudo systemctl enable --now filebeat`
 
 === Kibana
+Kibana is a free and open frontend application that sits on top of the Elastic Stack, providing search and data visualization capabilities for data indexed in Elasticsearch. Commonly known as the charting tool for the Elastic Stack, Kibana also acts as the user interface for monitoring, managing, and securing an Elastic Stack cluster.
 
 . Install Kibana with the following command `sudo dnf install kibana-7.11.2 -y`
 . Bind Kibana's listening address to the address of the applications server using the following command:
@@ -196,6 +201,7 @@ image::wazuhfileint.jpg[Wazuh File Integrity Agent, align="center"]
 
 == Troubleshooting
 
+* To list connected Wazuh agents to see which are working and which are not, issue the command `sudo /var/ossec/bin/agent_control -lc`
 * If you find that a change you made is not being implememnted, make sure you restart services after reconfiguring things with `systemctl restart [service]`
 * You can find general logs in the `/var/log/...` directories, and systemctl will instruct you on how to determine error codes when you run `systemctl status [service]`
 
