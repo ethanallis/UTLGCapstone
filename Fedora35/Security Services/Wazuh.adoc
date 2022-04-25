@@ -144,6 +144,10 @@ image::agentconfig.jpg[Agent Config, align="center"]
 +
 image::wazuhconnectedagents.jpg[Wazuh Connected Agents, align="center"]
 
+=== Snapshot the Configuration 
+
+Configuration complete! Preserving a functional state of the machine is important in case changes are made accidently. This can be done using VMWare’s snapshot functionality or other software packages for hardware labs.
+
 ==  Vulnerability Detection
 
 . Vulnerability detection features can be added to Wazuh by first editing the `/var/ossec/etc/ossec.conf` file and changing the `enabled` state from `no` to `yes` similar to the image below:
@@ -165,10 +169,6 @@ image::wazuhvulndetec2.jpg[Wazuh Vuln Detec Agent, align="center"]
   <directories check_all="yes" realtime="yes">c:/tmp</directories>
 </syscheck>
 ```
-
-=== Snapshot the Configuration 
-
-Configuration complete! Preserving a functional state of the machine is important in case changes are made accidently. This can be done using VMWare’s snapshot functionality or other software packages for hardware labs.
 
 == Troubleshooting
 
