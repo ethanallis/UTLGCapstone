@@ -175,6 +175,8 @@ systemctl enable --now filebeat
 ```
 filebeat test output
 ```
+image::filebeatest.jpg[filebeat config test, align="center"]
+
 
 == Install Kibana
 Kibana is an free and open frontend application that sits on top of the Elastic Stack, providing search and data visualization capabilities for data indexed in Elasticsearch. Commonly known as the charting tool for the Elastic Stack, Kibana also acts as the user interface for monitoring, managing, and securing an Elastic Stack cluster.
@@ -235,6 +237,8 @@ user: admin
 password: admin
 ```
 
+image::kibana.jpg[filebeat config test, align="center"]
+
 == Enable Security Vulnerability Scans 
 
 . Edit `/var/ossec/etc/ossec.conf`
@@ -258,6 +262,18 @@ password: admin
 ```
 This should already be in the config file all you need to do is change `<enabled>no</enabled>` to `<enabled>yes</enabled>`.  
 You will also need to reflect this by adding it on to each agent you wanted to run a vulnerability scan on. 
+
+You can generate a report of security events of the agent by going to `Wazuh->Modules->Name of Agent->Security Events`
+
+image::GenerateReport.jpg[generates security event report, align="center"]
+
+You can then download this report by going to `Wazuh->Management->Reporting`
+
+image::scanreport.jpg[download scan report, align="center"]
+
+An example of a report which was downloaded in a `.pdf` format is shown below:
+
+image::examplereport.jpg[download scan report, align="center"]
 
 == Enable Active Response Module
 
