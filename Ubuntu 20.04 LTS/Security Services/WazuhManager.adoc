@@ -275,19 +275,15 @@ An example of a report which was downloaded in a `.pdf` format is shown below:
 
 image::examplereport.jpg[download scan report, align="center"]
 
-== Enable Active Response Module
+== Add Active Response Module
 
-. Edit `/var/ossec/etc/ossec.conf`
+. Edit `/var/ossec/etc/ossec.conf` and add the following config:
 +
-```
-<active-response>
-  <disabled>no</disabled>
-  <command>host-deny</command>
-  <location>defined-agent</location>
-  <agent_id>032</agent_id>
-  <level>10</level>
-  <rules_group>sshd,|pci_dss_11.4,</rules_group>
-  <timeout>1</timeout>
-</active-response>
-```
+image::hostdeny.jpg[host deny active response, align="center"]
+
+. Check to make sure this has already been added if not add it into the config file:
+image::hostdenycmnd.jpg[host deny active response command, align="center"]
+
 The `<active-response>` and `</active-response>` should already be in the config file and all you need to do is add the lines in between.
++
+. To test that this works do the following:
