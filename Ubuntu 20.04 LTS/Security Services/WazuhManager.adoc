@@ -290,7 +290,7 @@ image::hostdenycmnd.jpg[host deny active response command, align="center"]
 
 . To test that this works do the following:
 +
-. Before trying to ssh into the box do `ping WAZUH-MANAGER-IP-ADDRESS` or `ping WAZUH-AGENT-IP-ADDRESS` and you'll get a response as long as you have connectivity.
+Test your ping to the Wazuh Manager or Agent and you should have connectivity `ping WAZUH-MANAGER-IP-ADDRESS` or `ping WAZUH-AGENT-IP-ADDRESS` and you'll get a response as long as you have connectivity.
 +
 . After testing your initial ping try sshing into either the Wazuh Manager or the Agent without a valid user.
 +
