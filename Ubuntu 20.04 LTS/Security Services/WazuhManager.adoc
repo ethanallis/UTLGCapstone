@@ -279,9 +279,8 @@ image::examplereport.jpg[download scan report, align="center"]
 
 . Edit `/var/ossec/etc/ossec.conf` and add the following config:
 +
-image::hostdeny.jpg[host deny active response, align="center"]
-
 The `<active-response>` and `</active-response>` should already be in the config file and all you need to do is add the lines in between.
+image::hostdeny.jpg[host deny active response, align="center"]
 
 . Check to make sure this has already been added if not add it into the config file:
 +
