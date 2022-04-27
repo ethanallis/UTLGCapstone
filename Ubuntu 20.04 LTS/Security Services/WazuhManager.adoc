@@ -280,6 +280,7 @@ image::examplereport.jpg[download scan report, align="center"]
 . Edit `/var/ossec/etc/ossec.conf` and add the following config:
 +
 The `<active-response>` and `</active-response>` should already be in the config file and all you need to do is add the lines in between.
+With this added Wazuh with automatically block an ip address for a certain period of time when any alert that is above a `level 4` is triggered.
 +
 image::hostdeny.jpg[host deny active response, align="center"]
 
@@ -288,3 +289,8 @@ image::hostdeny.jpg[host deny active response, align="center"]
 image::hostdenycmnd.jpg[host deny active response command, align="center"]
 
 . To test that this works do the following:
++
+Open up `cmd` on your host machine where your vms are stored or use a different vm and try to ssh into the Wazuh Manager or Agent.
+Use the command `ssh WAZUH-MANAGER-IP-ADDRESS` or `ssh WAZUH-AGENT-IP-ADDRESS` when trying to ssh into either one you need to attempt to login as an invalid user to trigger the specific rule level.
+Once you've tried to ssh into the box after around 10-15 tries the ip you're using will end up being blocked by Wazuh.
+
