@@ -286,5 +286,5 @@ image::hostdeny.jpg[host deny active response, align="center"]
 image::hostdenycmnd.jpg[host deny active response command, align="center"]
 
 The `<active-response>` and `</active-response>` should already be in the config file and all you need to do is add the lines in between.
-
++
 . To test that this works do the following:
