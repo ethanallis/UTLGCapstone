@@ -182,6 +182,20 @@ image::wazuhactiveresponse2.jpg[Wazuh Active Response Agent, align="center"]
 
 . Restart the Wazuh-Manager on the application server to apply changes with the command `systemctl restart wazuh-manager`
 
+. To test that this works do the following:
++
+Test your ping to the Wazuh Manager or Agent and you should have connectivity `ping WAZUH-MANAGER-IP-ADDRESS` or `ping WAZUH-AGENT-IP-ADDRESS` and you'll get a response as long as you have connectivity.
++
+. After testing your initial ping try sshing into either the Wazuh Manager or the Agent without a valid user.
++
+Open up `cmd` on your host machine where your vms are stored or use a vm and try to ssh into the Wazuh Manager or Agent.
+Use the command `ssh WAZUH-MANAGER-IP-ADDRESS` or `ssh WAZUH-AGENT-IP-ADDRESS` when trying to ssh into either one you need to attempt to login as an invalid user to trigger the specific rule level.
+Once you've tried to ssh into the box after around 10-15 tries the ip you're using will end up being blocked by Wazuh. This can be tested by doing a simple ping test before an after.
++
+. To see whether your ip ended up being blocked or not simply ping the Wazuh Manager or Agents ip address and it'll be blocked.
++
+`ping WAZUH-MANAGER-IP-ADDRESS` or `ping WAZUH-AGENT-IP-ADDRESS`
+
 == File Integrity
 
 . File integrity features should be enabled by default, but you have to show Wazuh where to look on each agent to ensure the feature works effectively
