@@ -176,11 +176,11 @@ image::vulndetectdemo.png[Wazuh Vuln Detec Demo, align="center"]
 
 . To demonstrate active response, first edit `/var/ossec/etc/ossec.conf` file and add the following command lines under the `<!-- Active response -->` section so it looks similar to the image below:
 +
-image::wazuhactiveresponse3.jpg[Wazuh Active Response Master, align="center"]
+image::wazuhactiveresponse5.jpg[Wazuh Active Response Master, align="center"]
 
 . To implement this active response command, within the same file, add or verify the following lines to the configuraton similar to the image below:
 +
-image::wazuhactiveresponse4.jpg[Wazuh Active Response Agent, align="center"]
+image::wazuhactiveresponse6.jpg[Wazuh Active Response Agent, align="center"]
 
 . This is an example of an SSH attack blocking rule not implemented by default on an agent
 
