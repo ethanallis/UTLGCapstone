@@ -178,7 +178,6 @@ image::wazuhactiveresponse.jpg[Wazuh Active Response Master, align="center"]
 image::wazuhactiveresponse2.jpg[Wazuh Active Response Agent, align="center"]
 
 . This is an example of an SSH attack blocking rule not implemented by default on an agent
-.. After multiple incorrect login attempts with an invalid SSH user, Wazuh will time out the machine attempting to do so for a set period of time. You can test this by pinging the agent before and after the active response is implemented
 
 . Restart the Wazuh-Manager on the application server to apply changes with the command `systemctl restart wazuh-manager`
 
