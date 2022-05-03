@@ -167,6 +167,11 @@ image::wazuhvulndetec2.jpg[Wazuh Vuln Detec Agent, align="center"]
 
 . Restart the Wazuh-Manager on the application server to apply changes with the command `systemctl restart wazuh-manager`
 
+To visualize vulnerability detection, you can navigate to the `Wazuh→Modules→Name_of_Agent→Security Events` window to view the security events dashboard as seen below:
+.. You may or may not have some security events generated already from configuarion of the TLG. To generate some events, attempting a brute force SSH login with incorrect credentials on any machine with an agent connected will generate some.
++
+image::vulndetectdemo.jpg[Wazuh Vuln Detec Demo, align="center"]
+
 == Demonstrating Active Response
 
 . To demonstrate active response, first edit `/var/ossec/etc/ossec.conf` file and add or verify the following command lines under the `<!-- Active response -->` section so it looks similar to the image below:
