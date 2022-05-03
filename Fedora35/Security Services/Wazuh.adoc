@@ -174,11 +174,11 @@ image::vulndetectdemo.png[Wazuh Vuln Detec Demo, align="center"]
 
 == Demonstrating Active Response
 
-. To demonstrate active response, first edit `/var/ossec/etc/ossec.conf` file and add or verify the following command lines under the `<!-- Active response -->` section so it looks similar to the image below:
+. To demonstrate active response, first edit `/var/ossec/etc/ossec.conf` file and add the following command lines under the `<!-- Active response -->` section so it looks similar to the image below:
 +
 image::wazuhactiveresponse.jpg[Wazuh Active Response Master, align="center"]
 
-. To implement this active response command, on every agent you wish to enable the rule on, navigate to the agent configuration file `/var/ossec/etc/ossec.conf` add the following lines to the configuraton similar to the image below:
+. To implement this active response command, within the same file, add or verify the following lines to the configuraton similar to the image below:
 +
 image::wazuhactiveresponse2.jpg[Wazuh Active Response Agent, align="center"]
 
